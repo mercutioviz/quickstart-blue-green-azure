@@ -1,16 +1,16 @@
 # Barracuda CloudGen Firewall and Web Application Firewall - Blue / Green deployment
 
 ## Introduction
-Since the begining of time people have tried to automate tasks. Also in computer sience we have seen this from the early days. One limition was the infrastructure that needed to be in place for automation to commence. With virtualisation and public cloud this automation has come full circle and we can now deploy, manage, redeploy everything using automation techniques. We can descibe the operating environment in code, validate it, test it, document it and deploy it from a code repository. 
+Engineers have long seen the value of automating tasks. Computer science is no exception. Automation has been a goal from the early days. One limition was the infrastructure that needed to be in place for automation to take place. With virtualisation and public cloud this automation has come full circle and we can now deploy, manage, and redeploy entire infrastructures using automation techniques. We can describe the operating environment in code, validate it, test it, document it, and deploy it from a code repository. 
 
-This is a giant change compared to the typical laborious deployment of infrastructure through cli, web ui, client or other. 
+This is a giant change compared to the typical laborious deployment of infrastructure through CLI, web UI, client or other. 
 
-The purpose of this demo is to showcase how you can create, configure and secure your whole environment from code.
+The purpose of this demo is to showcase how you can create, configure, and secure your whole environment from code.
 
 ![CGF Azure Network Architecture](images/cudalab-blue-green.png)
 
 ## Prerequisites
-The tools used in this setup are HashiCorp Terraform (> 0.11.x) and RedHat Ansible (> 2.x). Both tools have their pro's and con's. Working together they help maintaining the state of your infrastructure and the ensures the configuration is correct. The deployment can be done from either a bash shell script or from any CI tool. In our case we used Visual Studio Team Services (VSTS). The LINUX VSTS agent requires the Ansible and Terraform tools to be installed as well as the VSTS agent.
+The tools used in this setup are HashiCorp Terraform (> 0.11.x) and RedHat Ansible (> 2.x). Both tools have their pro's and con's. Working together they help with maintaining the state of your infrastructure and they ensure the configuration is correct. The deployment can be done from either a bash shell script or from any CI tool. In our case we used Visual Studio Team Services (VSTS). The Linux VSTS agent requires the Ansible and Terraform tools to be installed as well as the VSTS agent.
 
 ## Deployed resources
 Following resources will be created by this deployment per color:
@@ -25,11 +25,11 @@ Following resources will be created by this deployment per color:
 
 ## Deployment
 
-Deployment of this environment is possible via the Azure Cloud Shell. It is also possible via the a system that has Terraform and Ansible installed like a docker image (jvhoof/cloudgen-essentials). However for this deployment you will need to pass the credentials for Azure via the command line or environment variables. This is done automatically in Azure Cloud Shell. 
+Deployment of this environment is possible via the Azure Cloud Shell. It is also possible via a system that has Terraform and Ansible installed like a docker image (jvhoof/cloudgen-essentials). However for this deployment you will need to pass the credentials for Azure via the command line or environment variables. This is done automatically in Azure Cloud Shell. 
 
-You can also integrate the deployment of the Blue or Green environments into Azure DevOps or another CI/CD tools. 
+You can also integrate the deployment of the Blue or Green environments into Azure DevOps or other CI/CD tools. 
 
-The package provides a deploy.sh and destroy.sh scripts which will build or remove the whole setup per color when the correct arguments are supplied as well as the correct environment variables are set. For Azure DevOps the yaml files are provided.
+The package provides deploy.sh and destroy.sh scripts which will build or remove the whole setup per color when the correct arguments are supplied as well as the correct environment variables are set. For Azure DevOps the YAML files are provided.
 
 ### Azure CLI
 
